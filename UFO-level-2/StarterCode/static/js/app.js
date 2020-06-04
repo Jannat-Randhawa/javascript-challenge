@@ -37,9 +37,13 @@ function runEnter(){
     var dateValue = d3.select(".form-control#date").property("value");
     // Create a city variable for the filter 
     var cityValue = d3.select(".form-control#city").property("value");
+    // Create a state variable for the filter 
     var stateValue = d3.select(".form-control#state").property("value");
+    // Create a country variable for the filter 
     var countryValue = d3.select(".form-control#country").property("value");
+    // Create a shape variable for the filter 
     var shapeValue = d3.select(".form-control#shape").property("value");
+    // Create a duration variable for the filter 
     var durationValue = d3.select(".form-control#duration").property("value"); 
 
     var filteredData = tableData.filter(tableData => (dateValue === tableData.datetime || dateValue === "")
