@@ -29,11 +29,13 @@ function test() {
     console.log("RUNNING")
 }
 
-// Create th
+// Create the function for the data filter dropdown
 function runEnter(){
     d3.event.preventDefault();
 
+    // Create a date variable for the filter 
     var dateValue = d3.select(".form-control#date").property("value");
+    // Create a city variable for the filter 
     var cityValue = d3.select(".form-control#city").property("value");
     var stateValue = d3.select(".form-control#state").property("value");
     var countryValue = d3.select(".form-control#country").property("value");
