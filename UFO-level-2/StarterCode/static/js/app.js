@@ -35,12 +35,12 @@ function runEnter(){
     var shapeValue = d3.select(".form-control#shape").property("value");
     var durationValue = d3.select(".form-control#duration").property("value"); 
 
-    var filteredData = tableData.filter(tableData => (dateValue === tableData.datetime)
-        && (cityValue === tableData.city)
-        && (stateValue === tableData.state)
-        && (countryValue === tableData.country)
-        && (shapeValue === tableData.shape)
-        && (durationValue === tableData.durationMinutes)
+    var filteredData = tableData.filter(tableData => (dateValue === tableData.datetime || cityValue === "")
+        && (cityValue === tableData.city || cityValue === "")
+        && (stateValue === tableData.state || stateValue === "")
+        && (countryValue === tableData.country || countryValue === "")
+        && (shapeValue === tableData.shape || shapeValue === "")
+        && (durationValue === tableData.durationMinutes || durationValue === "")
     ); 
   
     var table1 = d3.select("#ufo-table").select("tbody").html("");
