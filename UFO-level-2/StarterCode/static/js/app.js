@@ -1,6 +1,4 @@
 // from data.js
-var tableData = data;
-
 var tableData = data; 
 
 var tbody = d3.select("#ufo-table tbody"); 
