@@ -24,11 +24,6 @@ var form = d3.select("form")
 console.log(form) 
 form.on("submit", test);
 
-// test if the sumbit button is running 
-function test() {
-    console.log("RUNNING")
-}
-
 // Create the function for the data filter dropdown
 function runEnter(){
     d3.event.preventDefault();
@@ -46,6 +41,7 @@ function runEnter(){
     // Create a duration variable for the filter 
     var durationValue = d3.select(".form-control#duration").property("value"); 
 
+    // Variable for filtering the data 
     var filteredData = tableData.filter(tableData => (dateValue === tableData.datetime || dateValue === "")
         && (cityValue === tableData.city || cityValue === "")
         && (stateValue === tableData.state || stateValue === "")
@@ -55,7 +51,7 @@ function runEnter(){
     ); 
   
     var table1 = d3.select("#ufo-table").select("tbody").html("");
-
+    // Append the filtered values to the table. 
     filteredData.forEach(function(ufoSighting) {
         console.log(ufoSighting);
         var row = tbody.append('tr');
