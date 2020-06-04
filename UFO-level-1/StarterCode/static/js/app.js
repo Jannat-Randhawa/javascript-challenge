@@ -24,11 +24,13 @@ var form = d3.select("form")
 form.on("submit", runEnter);
 // create filter function for the date
 function runEnter(){
+    // prevent page from refreshing 
     d3.event.preventDefault();
+    // Select input Element
     var inputElement = d3.select(".form-control").property("value");
-
+    // Filter data according to input element
     var filteredData = tableData.filter(tableData => (inputElement === tableData.datetime));
-  
+    // Select tbody
     var table1 = d3.select("#ufo-table").select("tbody").html("");
 
     filteredData.forEach(function(ufoSighting) {
