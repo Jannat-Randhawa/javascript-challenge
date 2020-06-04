@@ -1,17 +1,10 @@
 // from data.js
 var tableData = data;
-console.log(tableData);
+
 
 var tbody = d3.select("#ufo-table tbody");
 console.log(tbody);
 
-var Date = d3.select("#Date").text();
-var City = d3.select("#City").text();
-var State = d3.select("#State").text();
-var Country = d3.select("#Country").text();
-var Shape = d3.select("#Shape").text();
-var Duration = d3.select("#Duration").text();
-var City = d3.select("#City").text();
 
 tableData.forEach(function(ufoSighting){
     console.log(ufoSighting);
@@ -42,16 +35,12 @@ form.on("submit", runEnter);
 
 function runEnter(){
     d3.event.preventDefault();
-    var inputElement = d3.select("form-control");
-    var inputValue = inputElement.property("value");
-    console.log(inputValue);
-    console.log(tableData);
+    var inputElement = d3.select(".form-control").property("value");
 
-    var filteredDataValue = tableData.filter(tableData => tableData.datetime);
-    var outputData = inputValue === filteredDataValue
-    console.log(outputData)
+    var filteredDataValue = tableData.filter(tableData => (inputElement === tableData.datetime));
+  
+    var table1 = d3.select("#ufo-table").select("tbody").html("");
 
-    var data = d3.select(".list-group");
-    data.html("");
-    data.append("li .filter").text(outputData);
-}
+    tableData.map()
+    
+} ;
