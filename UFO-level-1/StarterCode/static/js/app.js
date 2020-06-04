@@ -32,7 +32,7 @@ function runEnter(){
     var filteredData = tableData.filter(tableData => (inputElement === tableData.datetime));
     // Select tbody
     var table1 = d3.select("#ufo-table").select("tbody").html("");
-
+    // Use forEach to filter data and append to the tbody
     filteredData.forEach(function(ufoSighting) {
         console.log(ufoSighting);
         var row = tbody.append('tr');
