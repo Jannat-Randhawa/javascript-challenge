@@ -1,8 +1,10 @@
 // from data.js
 var tableData = data; 
 
+//Select tbody
 var tbody = d3.select("#ufo-table tbody"); 
 
+//Append data values to the table 
 tableData.forEach(function(ufoSighting){ 
     var row = tbody.append('tr');
 
@@ -13,18 +15,21 @@ tableData.forEach(function(ufoSighting){
         cell.text(cellValue);
     }); 
 });
-
+// select the filter button 
 var button = d3.select("#filter-btn") 
 button.on("click", runEnter); 
 
+// select the form button 
 var form = d3.select("form")
 console.log(form) 
 form.on("submit", test);
 
+// test if the sumbit button is running 
 function test() {
     console.log("RUNNING")
 }
 
+// Create th
 function runEnter(){
     d3.event.preventDefault();
 
