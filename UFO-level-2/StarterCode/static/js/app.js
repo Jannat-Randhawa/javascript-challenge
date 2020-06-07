@@ -20,9 +20,7 @@ var button = d3.select("#filter-btn")
 button.on("click", runEnter); 
 
 // select the form button 
-var form = d3.select("form")
-console.log(form) 
-form.on("submit", test);
+var form = d3.select("form");
 
 // Create the function for the data filter dropdown
 function runEnter(){
